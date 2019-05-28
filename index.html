@@ -2,271 +2,102 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>命运石之门</title>
-
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <link href="/images/favicon.ico" rel="shortcut icon" />
   <style >
-  body{
-    padding-top: 50px;
-    padding-bottom: 20px;
-    font-family: Microsoft YaHei;
-  }
-  /*轮播广告*/
-  .carousel{
-    height:500px;
-    background-color: #000;
+  body {
+    background: linear-gradient(135deg, #3023AE, #C86DD7);
+    background-attachment: fixed;
+    /* 顺便加个字体吧 */
+    font-size: 20px;
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei;
+}
+  *{
+    margin: 0;
+}
+.page-header {
+    padding: 20px 30px;
+    overflow: hidden;
+}
+.page-header .brand{
+    color: white;
+    text-decoration: none;
+    float: left;
+}
+.panel {
+    margin: 160px auto 60px;
+    text-align: center;
+    background-color: white;
+    width: 700px;
+    border-radius: 10px;  /* 来个圆角 */
+    padding: 1px;
+    transition: box-shadow .30s;
+}
+.panel:hover{
+    box-shadow: #fff 5px 5px 25px;
+}
+.avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    margin-top: -60px;
+}
+h3 {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px 0 20px;
+}
+p.lead{
+    color: #333;
+    font-style: italic;
     margin-bottom: 30px;
-  }
-  .carousel .item{
-    height:500px;
-    background-color: #000;
-  }
-  .carousel img{
-    width: 100%
-  }
-  .carousel-caption p{
-    margin-bottom: 10px;
-    line-height: 1.6;
-  }
-  
-  .summary {
-            padding-right: 15px;
-            padding-left: 15px;
-  }
-
-  .summary .col-md-4 {
-      margin-bottom: 20px;
-      text-align: center;
-  }
-  hr.divider{
-    margin:40px 0;
-  }
-  .img-circle {
-    border-radius: 50%;
-  }
-
-
+}
+.btn {
+    color: white;
+    background: rgb(48, 35, 174);
+    font-size: 16px;
+    line-height: 38px;
+    height: 38px;
+    padding: 0 20px;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background .15s;
+}
+.btn:hover {
+    background-color: rgb(81, 67, 224);
+}
+.tags{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #999;
+}
+.tag{
+    margin: 0 25px;
+}
+.tag:before{
+    content: '#'
+}
+.img-circle {
+    border-radius: 50%;
   </style>
+
 </head>
-
 <body>
-<!-- 导航条板块 -->
-<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
-<div class="container-fluid">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">命运石之门</a>
-  </div>
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">综述<span class="sr-only">(current)</span></a></li>
-      <li><a href="#">简述</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">特点 <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">凤凰园凶真</a></li>
-          <li><a href="#">牧濑红莉栖</a></li>
-          <li><a href="#">椎名真由理</a></li>
-          <li role="separator" class="divider"></li>
-        </ul>
-      </li>
-      <li><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
-    </ul>
-    <!-- 搜索栏 -->
-    <!-- <form class="navbar-form navbar-right" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="搜索...">
-      </div>
-      <button type="submit" class="btn btn-default">确定</button>
-    </form> -->
-  </div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
-</nav>
-
-<!-- 轮播图片板块 -->
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="images/xiongzhen-big.jpg" alt="1 slide">
-      <div class="carousel-caption">
-      <h1>疯狂科学家</h1>
-      <P>著名的中二病。时不时会像很多小孩一样拿出电话假装在和“重要人士”通话，又或者给身边的人起一些莫名其妙的外号。交谈时会突然掏出手机，然后开始莫名其妙的自言自语，并在结束的时候附上“这是Stein Gate的选择”或者“EL PSY CONGROO”。</P>
-      <p><a class="btn btn-lg btn-primary" href="https://zh.moegirl.org/zh/%E5%86%88%E9%83%A8%E4%BC%A6%E5%A4%AA%E9%83%8E"role="button" target="_blank">EL PSY CONGROO</a></p>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="images/chris-big.jpg" alt="2 slide">
-      <div class="carousel-caption">
-      <h1>助手</h1>
-      <P>未来道具研究所的研究员No.004，表面上是冷静而且过分地坚持理论的性格，实际上是个好奇心旺盛喜欢做实验的女孩，成为研究所成员后显现出对研究、改造电话烤箱的热情。</P>
-      <p><a class="btn btn-lg btn-primary" href="https://zh.moegirl.org/zh/%E7%89%A7%E6%BF%91%E7%BA%A2%E8%8E%89%E6%A0%96"role="button" target="_blank">克里斯蒂娜</a></p>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="images/dudulu-big.jpg" alt="3 slide">
-      <div class="carousel-caption">
-      <h1>嘟嘟噜</h1>
-      <P>未来道具研究所的研究员No.002，冈部伦太郎的青梅竹马，叫冈部伦太郎“冈伦”，称呼自己“真由氏”(まゆしぃ)并且是冈部的“人质”。</P>
-      <p><a class="btn btn-lg btn-primary" href="http://www.bilibili.com/video/av78287/" role="button" target="_blank">嘟嘟嘟嘟嘟嘟噜</a></p>
-      </div>
-    </div>
-  </div>
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">上一页</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">下一页</span>
-  </a>
-</div>
-
-<!-- 三栏布局 -->
-<div class="container summary">
-  <div class="row" id="summary-container">
-      <div class="col-md-4">
-      <img class="img-circle" src="images/xiongzhen.jpg" alt="chrome" height="250px">
-
-      <h2>冈部伦太郎</h2>
-      <P>著名的中二病。时不时会像很多小孩一样拿出电话假装在和“重要人士”通话，又或者给身边的人起一些莫名其妙的外号。交谈时会突然掏出手机，然后开始莫名其妙的自言自语，并在结束的时候附上“这是Stein Gate的选择”或者“EL PSY CONGROO”。</P>
-      <p><a href="#" class="btn btn-default" role="button">El PSY CONGROO</a></p>
-    </div>
-
-    <div class="col-md-4">
-      <img class="img-circle" src="images/chris.jpg" alt="chris" height="250px">
-      <h2>助手</h2>
-      <P>未来道具研究所的研究员No.004，表面上是冷静而且过分地坚持理论的性格，实际上是个好奇心旺盛喜欢做实验的女孩，成为研究所成员后显现出对研究、改造电话烤箱的热情。</P>
-      <p><a href="#" class="btn btn-default" role="button">克里斯提娜</a></p>
-    </div>
-
-    <div class="col-md-4">
-      <img class="img-circle" src="images/dudulu.jpg" alt="dudulu" height="250px">
-      <h2>嘟嘟噜</h2>
-      <P>未来道具研究所的研究员No.002，冈部伦太郎的青梅竹马，叫冈部伦太郎“冈伦”，称呼自己“真由氏”(まゆしぃ)并且是冈部的“人质”。</P>
-      <p><a href="#" class="btn btn-default" role="button">嘟嘟噜</a></p>
-    </div>
-  </div>
-  <hr class="divider">
-
-  <!-- 导航标签页 -->
-  <ul class="nav nav-tabs" role="tablist" id="feature-tab">
-        <li class="active"><a href="#tab-male1" role="tab" data-toggle="tab">凶真</a></li>
-        <li><a href="#tab-female1" role="tab" data-toggle="tab">助手</a></li>
-        <li><a href="#tab-female2" role="tab" data-toggle="tab">青梅竹马</a></li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane active" id="tab-male1">
-            <div class="row feature">
-                <div class="col-md-7">
-                    <h2 class="feature-heading">冈部伦太郎<span
-                            class="small">时间线的穿梭者</span></h2>
-
-                    <p class="lead">著名的中二病。时不时会像很多小孩一样拿出电话假装在和“重要人士”通话，又或者给身边的人起一些莫名其妙的外号。交谈时会突然掏出手机，然后开始莫名其妙的自言自语，并在结束的时候附上“这是Stein Gate的选择”或者“EL PSY CONGROO”。</p>
-                </div>
-                <div class="col-md-5">
-                    <img class="feature-image img-responsive img-circle" src="images/xiongzhen.jpg"
-                         alt="xiongzhen">
-                </div>
-            </div>
-        </div>
-
-        <div class="tab-pane" id="tab-female1">
-            <div class="row feature">
-                <div class="col-md-5">
-                    <img class="feature-image img-responsive img-circle" src="images/chris.jpg"
-                         alt="chris">
-                </div>
-                <div class="col-md-7">
-
-                    <h2 class="feature-heading">牧濑红莉栖<span class="small">无条件的信任者</span>
-                    </h2>
-
-                    <p class="lead">未来道具研究所的研究员No.004，表面上是冷静而且过分地坚持理论的性格，实际上是个好奇心旺盛喜欢做实验的女孩，成为研究所成员后显现出对研究、改造电话烤箱的热情。</p>
-                    <p class="lead" style="color:white">同时也是我老婆</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="tab-pane" id="tab-female2">
-            <div class="row feature">
-                <div class="col-md-7">
-
-                    <h2 class="feature-heading">椎名真由理<span class="small">守护兵库北</span></h2>
-
-                    <p class="lead">未来道具研究所的研究员No.002，冈部伦太郎的青梅竹马，叫冈部伦太郎“冈伦”，称呼自己“真由氏”(まゆしぃ)并且是冈部的“人质”。</p>
-                </div>
-                <div class="col-md-5">
-                    <img class="feature-image img-responsive img-circle" src="images/dudulu.jpg"
-                         alt="dudulu">
-                </div>
-            </div>
-        </div>        
-
-    </div>
-
-    <hr class="divider">
-  
-    <footer>
-      <p class="pull-right"><a href="#top">回到顶部</a></p>
-      <p>©2016饭卡</p>
-    </footer>
-</div>
-
-<!-- 关于 -->
-<div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
- aria-hidden="true">
-<div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span
-                    aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
-            <h4 class="modal-title" id="modal-label">关于</h4>
-        </div>
-        <div class="modal-body">
-            <p style="font-size:20px;text-align:center">Thanks for visiting!</p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
-            <button type="button" class="btn btn-primary">好！</button>
-        </div>
-    </div>
-</div>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-78795162-1', 'auto');
-  ga('send', 'pageview');
-
-  </script>	
-  <script src="js/jquery-1.11.1.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+<section class="panel">
+    <p class="avatar">
+      <img class="img-circle" src="images/avatar1.jpg" alt="" height="250px">
+    </p>
+    <h3>Hi，我是吕盈和</h3>
+    <p class="lead">认识你&nbsp;&nbsp;很高兴</p>
+    <p>
+      <a class="btn" href="images/qrcode.jpg">
+        <i class="fa fa-bars"></i> ￥赏钱给我
+      </a>
+    </p>
+    <p class="tags">
+      <span class="tag">养鸟</span>
+      <span class="tag">养花</span>
+      <span class="tag">作死</span>
+    </p>
+  </section>
 </body>
 </html>
